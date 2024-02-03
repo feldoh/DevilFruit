@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+    <name>DevilFruit</name>
+    <author>Feldoh</author>
+    <supportedVersions>
+        <li>1.4</li>
+    </supportedVersions>
+    <packageId>feldoh.devilfruit</packageId>
+    <description>Genepack reflavour, making them look and be named like devil fruits.</description>
+</ModMetaData>
