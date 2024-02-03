@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+
 <ModMetaData>
     <name>DevilFruit</name>
     <author>Feldoh</author>
@@ -7,4 +8,28 @@
     </supportedVersions>
     <packageId>feldoh.devilfruit</packageId>
     <description>Genepack reflavour, making them look and be named like devil fruits.</description>
+
+    <url>https://steamcommunity.com/id/feldoh/myworkshopfiles/?appid=294100</url>
+    <modDependencies>
+        <li>
+            <packageId>brrainz.harmony</packageId>
+            <displayName>Harmony</displayName>
+            <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+            <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+        </li>
+        <li>
+            <packageId>dankpyon.medievalgenepacks</packageId>
+            <displayName>Medieval Genepacks</displayName>
+            <steamWorkshopUrl>steam://url/CommunityFilePage/2914889498</steamWorkshopUrl>
+        </li>
+    </modDependencies>
+
+    <loadAfter>
+        <li>brrainz.harmony</li>
+        <li>Ludeon.RimWorld</li>
+        <li>Ludeon.RimWorld.Ideology</li>
+        <li>Ludeon.RimWorld.Royalty</li>
+        <li>Ludeon.RimWorld.Biotech</li>
+        <li>dankpyon.medievalgenepacks</li>
+    </loadAfter>
 </ModMetaData>
