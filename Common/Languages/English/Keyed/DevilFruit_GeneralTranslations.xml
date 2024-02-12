@@ -4,4 +4,5 @@
     <DevilFruit_Settings_HideDescription>Hide Gene Info</DevilFruit_Settings_HideDescription>
     <DevilFruit_Settings_Name>Devil Fruits</DevilFruit_Settings_Name>
     <DevilFruit_Message_Blocked>Prior Devil Fruit ingestion prevented mutation: {0}</DevilFruit_Message_Blocked>
+    <DevilFruit_MysteryDescription>A Devil Fruit with unclear effects.</DevilFruit_MysteryDescription>
 </LanguageData>

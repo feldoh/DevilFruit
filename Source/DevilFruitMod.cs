@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Reflection;
 using DevilFruit.ConsumableGenepacks.HarmonyPatches;
 using HarmonyLib;
 using RimWorld;
@@ -25,6 +24,8 @@ public class DevilFruitMod : Mod
                 new HarmonyMethod(typeof(OneFruitOnlyPatch), nameof(OneFruitOnlyPatch.AddGenePatch)));
         }
 
+        harmony.Patch(AccessTools.PropertyGetter(typeof(GeneSetHolderBase), nameof(GeneSetHolderBase.DescriptionDetailed)), null,
+            new HarmonyMethod(typeof(DevilFruitMod), nameof(HideDescription)));
         harmony.Patch(AccessTools.Method(typeof(GeneSetHolderBase), "GetInspectString"), null,
             new HarmonyMethod(typeof(DevilFruitMod), nameof(HideDescription)));
         harmony.Patch(AccessTools.Method(typeof(GeneSetHolderBase), nameof(Genepack.GetGizmos)), null,
@@ -34,13 +35,11 @@ public class DevilFruitMod : Mod
 
     public static void HideDescription(ref string __result)
     {
-        Log.Message("Called HideDescription");
-        __result = settings.hideDescription ? "A mystery" : __result;
+        __result = settings.hideDescription ? "DevilFruit_MysteryDescription".Translate() : __result;
     }
 
     public static IEnumerable<Gizmo> HideGeneGizmo(IEnumerable<Gizmo> __result, GeneSetHolderBase __instance)
     {
-        Log.Message("Called HideGeneGizmo");
         foreach (Gizmo gizmo in __result)
         {
             switch (gizmo)
