@@ -33,9 +33,9 @@ public class DevilFruitMod : Mod
         settings.PatchGeneTabs(ThingDefOf.Genepack);
     }
 
-    public static void HideDescription(ref string __result)
+    public static void HideDescription(ref string __result, GeneSetHolderBase __instance)
     {
-        __result = settings.hideDescription ? "DevilFruit_MysteryDescription".Translate() : __result;
+        __result = settings.hideDescription ? "DevilFruit_MysteryDescription".Translate(__instance.LabelCap) : __result;
     }
 
     public static IEnumerable<Gizmo> HideGeneGizmo(IEnumerable<Gizmo> __result, GeneSetHolderBase __instance)
