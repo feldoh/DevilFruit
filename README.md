@@ -1,3 +1,9 @@
+<p>
+  <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3169663638" >
+  <img src="https://img.shields.io/static/v1?label=Steam&message=Workshop&color=blue&logo=steam&link=https://steamcommunity.com/sharedfiles/filedetails/?id=3169663638" alt="Steam Workshop Link"/>
+  </a>
+</p>
+
 # Devil Fruits
 
 Re-flavour genepacks to be devil fruits from One Piece.
@@ -16,3 +22,4 @@ This content/mod is not official and is not endorsed by Ludeon, Toei, or Eiichir
 ## Thanks
 * Ludeon for the Game
 * Eiichiro Oda for One Piece
+* Mr Samuel Streamer for the art
