@@ -31,5 +31,7 @@
         <li>Ludeon.RimWorld.Royalty</li>
         <li>Ludeon.RimWorld.Biotech</li>
         <li>dankpyon.medievalgenepacks</li>
+        <li>verily.medievalgenepacksalphagenes</li>
+        <li>ddjy.medievalgeneassembler</li>
     </loadAfter>
 </ModMetaData>
