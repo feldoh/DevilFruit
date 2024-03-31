@@ -10,7 +10,7 @@ public static class DevilFruitInit
     {
         foreach (ThingDef def in DefDatabase<ThingDef>.AllDefsListForReading)
         {
-            if (def.GetCompProperties<CompProperties_Neurotrainer>() is not { skill: not null }) continue;
+            if (def.GetCompProperties<CompProperties_UseEffect_LearnSkill>() is not { skill: not null }) continue;
             GraphicData graphicData = new();
             graphicData.CopyFrom(def.graphicData);
             graphicData.texPath = "Things/Item/Special/MechSerumSkilltrainer";

@@ -8,7 +8,7 @@
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <OutputPath>../1.4/Assemblies/</OutputPath>
+    <OutputPath>../1.5/Assemblies/</OutputPath>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <DebugType>portable</DebugType>
     <DebugSymbols>true</DebugSymbols>
@@ -16,22 +16,25 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
-    <OutputPath>../1.4/Assemblies/</OutputPath>
+    <OutputPath>../1.5/Assemblies/</OutputPath>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <DebugSymbols>false</DebugSymbols>
     <Optimize>true</Optimize>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Assembly-CSharp">
-      <HintPath>../../../RimWorldWin64_Data/Managed/Assembly-CSharp.dll</HintPath>
+      <HintPath Condition="Exists('D:/SteamLibrary/steamapps/common/RimWorld/RimWorldWin64_Data')">D:/SteamLibrary/steamapps/common/RimWorld/RimWorldWin64_Data/Managed/Assembly-CSharp.dll</HintPath>
+      <HintPath Condition="!Exists('D:/SteamLibrary/steamapps/common/RimWorld/RimWorldWin64_Data')">../../../RimWorldWin64_Data/Managed/Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>../../../RimWorldWin64_Data/Managed/UnityEngine.CoreModule.dll</HintPath>
+      <HintPath Condition="Exists('D:/SteamLibrary/steamapps/common/RimWorld/RimWorldWin64_Data')">D:/SteamLibrary/steamapps/common/RimWorld/RimWorldWin64_Data/Managed/UnityEngine.CoreModule.dll</HintPath>
+      <HintPath Condition="!Exists('D:/SteamLibrary/steamapps/common/RimWorld/RimWorldWin64_Data')">../../../RimWorldWin64_Data/Managed/UnityEngine.CoreModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.TextRenderingModule">
-      <HintPath>../../../RimWorldWin64_Data/Managed/UnityEngine.TextRenderingModule.dll</HintPath>
+      <HintPath Condition="Exists('D:/SteamLibrary/steamapps/common/RimWorld/RimWorldWin64_Data')">D:/SteamLibrary/steamapps/common/RimWorld/RimWorldWin64_Data/Managed/UnityEngine.TextRenderingModule.dll</HintPath>
+      <HintPath Condition="!Exists('D:/SteamLibrary/steamapps/common/RimWorld/RimWorldWin64_Data')">../../../RimWorldWin64_Data/Managed/UnityEngine.TextRenderingModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
@@ -46,7 +49,7 @@
     <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
   </ItemGroup>
   <ItemGroup Condition="'@(Reference->WithMetadataValue('Identity', 'Assembly-CSharp')->Metadata('HintPath')->Exists())' == ''">
-    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.4-*" />
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.5-*" />
   </ItemGroup>
   <PropertyGroup>
     <StartAction>Program</StartAction>
