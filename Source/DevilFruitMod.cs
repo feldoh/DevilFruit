@@ -30,7 +30,6 @@ public class DevilFruitMod : Mod
             new HarmonyMethod(typeof(DevilFruitMod), nameof(HideDescription)));
         harmony.Patch(AccessTools.Method(typeof(GeneSetHolderBase), nameof(Genepack.GetGizmos)), null,
             new HarmonyMethod(typeof(DevilFruitMod), nameof(HideGeneGizmo)));
-        settings.PatchGeneTabs(ThingDefOf.Genepack);
     }
 
     public static void HideDescription(ref string __result, GeneSetHolderBase __instance)

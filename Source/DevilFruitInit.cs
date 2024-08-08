@@ -16,5 +16,6 @@ public static class DevilFruitInit
             graphicData.texPath = "Things/Item/Special/MechSerumSkilltrainer";
             def.graphicData = graphicData;
         }
+        DevilFruitMod.settings.PatchGeneTabs(ThingDefOf.Genepack);
     }
 }
