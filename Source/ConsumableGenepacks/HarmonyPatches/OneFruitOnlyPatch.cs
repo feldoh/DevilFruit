@@ -10,9 +10,12 @@ public static class OneFruitOnlyPatch
         ingester.genes.AddGene(DevilFruitDefOf.DevilFruit_Eater, false);
     }
 
+    // Dupe of AddGenelockedGene due to arg name difference
+    public static void AddGenelockedGeneForUser(Pawn user) => AddGenelockedGene(user);
+
     public static bool AddGenePatch(ref Gene __result, Pawn_GeneTracker __instance, GeneDef geneDef, bool xenogene)
     {
-        if (!DevilFruitMod.settings.oneFruitOnly || geneDef == DevilFruitDefOf.DevilFruit_Eater || !__instance.HasGene(DevilFruitDefOf.DevilFruit_Eater)) return true;
+        if (!DevilFruitMod.settings.oneFruitOnly || geneDef == DevilFruitDefOf.DevilFruit_Eater || !__instance.HasActiveGene(DevilFruitDefOf.DevilFruit_Eater)) return true;
         __result = null;
         Messages.Message("DevilFruit_Message_Blocked".Translate(geneDef.LabelCap), (Thing)__instance.pawn, MessageTypeDefOf.RejectInput);
         return false;

@@ -15,14 +15,21 @@ public class DevilFruitMod : Mod
     {
         settings = GetSettings<Settings>();
         Harmony harmony = new("feldoh.devilfruit");
+        bool shouldApplyGeneEatingPatch = false;
         if (AccessTools.TypeByName("ConsumableGenepack.ConsumableGenepack") is { } ConsumableGenepackType)
         {
             harmony.Patch(AccessTools.Method(ConsumableGenepackType, "PostIngested"), null,
                 new HarmonyMethod(typeof(OneFruitOnlyPatch), nameof(OneFruitOnlyPatch.AddGenelockedGene)));
-
-            harmony.Patch(AccessTools.Method(typeof(Pawn_GeneTracker), nameof(Pawn_GeneTracker.AddGene), [typeof(GeneDef), typeof(bool)]),
-                new HarmonyMethod(typeof(OneFruitOnlyPatch), nameof(OneFruitOnlyPatch.AddGenePatch)));
+            shouldApplyGeneEatingPatch = true;
         }
+        if (AccessTools.TypeByName("GeneInjector.CompTargetEffect_GeneInjector") is { } InjectableGenepackType)
+        {
+            harmony.Patch(AccessTools.Method(InjectableGenepackType, "DoEffect"), null,
+                new HarmonyMethod(typeof(OneFruitOnlyPatch), nameof(OneFruitOnlyPatch.AddGenelockedGeneForUser)));
+            shouldApplyGeneEatingPatch = true;
+        }
+        if (shouldApplyGeneEatingPatch) harmony.Patch(AccessTools.Method(typeof(Pawn_GeneTracker), nameof(Pawn_GeneTracker.AddGene), [typeof(GeneDef), typeof(bool)]),
+            new HarmonyMethod(typeof(OneFruitOnlyPatch), nameof(OneFruitOnlyPatch.AddGenePatch)));
 
         harmony.Patch(AccessTools.PropertyGetter(typeof(GeneSetHolderBase), nameof(GeneSetHolderBase.DescriptionDetailed)), null,
             new HarmonyMethod(typeof(DevilFruitMod), nameof(HideDescription)));

@@ -19,9 +19,9 @@
             <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
         </li>
         <li>
-            <packageId>dankpyon.medievalgenepacks</packageId>
-            <displayName>Medieval Genepacks</displayName>
-            <steamWorkshopUrl>steam://url/CommunityFilePage/2914889498</steamWorkshopUrl>
+            <packageId>zaf.injectgene</packageId>
+            <displayName>Inject Genes</displayName>
+            <steamWorkshopUrl>steam://url/CommunityFilePage/2918091446</steamWorkshopUrl>
         </li>
     </modDependencies>
 
@@ -32,6 +32,7 @@
         <li>Ludeon.RimWorld.Royalty</li>
         <li>Ludeon.RimWorld.Biotech</li>
         <li>dankpyon.medievalgenepacks</li>
+        <li>zaf.injectgene</li>
         <li>verily.medievalgenepacksalphagenes</li>
         <li>ddjy.medievalgeneassembler</li>
     </loadAfter>
