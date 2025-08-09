@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Defs>
+    <GeneDef>
+        <defName>DevilFruit_Eater</defName>
+        <label>devil fruit eater</label>
+        <description>Carriers have consumed a devil fruit at some point which exerts an effect on their DNA preventing it from being tampered with further. Any attempts to do so simply seem to fail.</description>
+        <iconPath>UI/Icons/Genes/DevilFruit</iconPath>
+        <displayCategory>Miscellaneous</displayCategory>
+        <canGenerateInGeneSet>false</canGenerateInGeneSet>
+        <passOnDirectly>false</passOnDirectly>
+        <biostatCpx>0</biostatCpx>
+    </GeneDef>
+</Defs>
